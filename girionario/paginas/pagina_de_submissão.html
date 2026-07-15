@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Girionario - Página de submissão</title>
+    </head>
+    <body>
+        <header>
+            <img src="imagens/logo-ifc-vertical.png" alt="Logo do IFC">
+        </header>
+
+        <div id="titulo">
+            <h3>Dicionário de Gírias</h3>
+            <img src="imagens/logo-girionario.png" alt="Logo do Girionário">
+            <h1>Girionário</h1>
+            <p>Descubra as gírias, expressões e o vocabulário único de cada canto do Brasil. Do Sul ao Norte, do Nordeste ao Centro-Oeste. 🇧🇷</p>
+        </div>
+
+        <aside>
+            <ol>
+                <li><a href="index.html">Página inicial</a></li>
+                <li><a href="submissao.html">Submissão</a></li>
+            </ol>
+        </aside>
+
+        <main>
+            <h2>Submeter uma nova gíria</h2>
+            <form action="#" method="post">
+                <label for="giria">Gíria:</label>
+                <input type="text" id="giria" name="giria" required>
+
+                <label for="significado">Significado:</label>
+                <textarea id="significado" name="significado" required></textarea>
+
+                <label for="regiao">Região:</label>
+                <select id="regiao" name="regiao" required>
+                    <option value="">Selecione uma região</option>
+                    <option value="norte">Norte</option>
+                    <option value="nordeste">Nordeste</option>
+                    <option value="centro-oeste">Centro-Oeste</option>
+                    <option value="sudeste">Sudeste</option>
+                    <option value="sul">Sul</option>
+                </select>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </main>
+
+        <footer>
+            2026 Girionário. Todos os direitos reservados.
+        </footer>
+    </body>
+</html>
