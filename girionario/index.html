@@ -6,35 +6,119 @@
         <title>Girionario - Página inicial</title>
 
         <style>
-            .cards-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-                max-width: 1200px;
-                margin: 0 auto;
+
+            /* Estilos Gerais */
+            body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
             }
 
-            .card {
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                transition: transform 0.2s;
+            .filtros {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
             }
 
-            .card:hover {
-                transform: translateY(-5px);
+            .btn-filtro {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #fff;
+            color: #555;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             }
 
-            .card h3 {
-                margin-top: 0;
-                color: #333;
+            .btn-filtro:hover, .btn-filtro.ativo {
+            background-color: #007BFF;
+            color: #fff;
             }
 
-            .card p {
-                color: #666;
+            /* Grid de Cards */
+            .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+
+            /* Estilo Individual dos Cards */
+            .card-item {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            border-left: 5px solid #ccc;
+            }
+
+            .card-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            }
+
+            .card-item h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            }
+
+            /* Tags das Classes */
+            .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            }
+
+            /* Cores das Diferentes Classes */
+            .classe-1 { border-left-color: #e74c3c; background-color: #fde8e7; color: #e74c3c; }
+            .classe-2 { border-left-color: #3498db; background-color: #e8f4fd; color: #3498db; }
+            .classe-3 { border-left-color: #2ecc71; background-color: #eafaf1; color: #2ecc71; }
+            .classe-4 { border-left-color: #f1c40f; background-color: #fef9e7; color: #f1c40f; }
+            .classe-5 { border-left-color: #9b59b6; background-color: #f5eef8; color: #9b59b6; }
+
+            /* Estilo do Resumo */
+            .resumo {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            }
+
+            /* Conteúdo Expandido */
+            .mais-info {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.5;
+            }
+
+            /* Modificadores para quando o Card estiver Expandido */
+            .card-item.expandido {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            }
+
+            .card-item.expandido .mais-info {
+            display: block;
             }
         </style>
+
     </head>
     <body>
         <header>
@@ -55,101 +139,109 @@
        </nav>
        <aside id="menu-por-regiao">
             <h3>Pesquise por região</h3>
-            <ol>
-                <li><button class="btn-filtro" data-classe="todos">Todos</button></li>
+            <ul>
+                <li><button class="btn-filtro ativo" data-classe="todos">Todos</button></li>
                 <li><button class="btn-filtro" data-classe="norte">Norte</button></li>
                 <li><button class="btn-filtro" data-classe="nordeste">Nordeste</button></li>
                 <li><button class="btn-filtro" data-classe="centro-oeste">Centro-Oeste</button></li>
                 <li><button class="btn-filtro" data-classe="sudeste">Sudeste</button></li>
                 <li><button class="btn-filtro" data-classe="sul">Sul</button></li>
-            </ol>
-
-       </aside>
+            </ul>
+            </aside>
         <main>
-            <div id="container-cards" class="cards-grid">
+            <div id="cards-container" class="grid-cards"></div>
 
-                <script>
-                    // Lista de gírias
-                    const bancoDeCards = [
-                    { titulo: "De Bubuia", classe: "norte", texto: "Ficar sem fazer nada." },
-                    { titulo: "Card 2", texto: "Conteúdo do card número 2." },
-                    { titulo: "Card 3", texto: "Conteúdo do card número 3." },
-                    { titulo: "Card 4", texto: "Conteúdo do card número 4." },
-                    { titulo: "Card 5", texto: "Conteúdo do card número 5." },
-                    { titulo: "Card 6", texto: "Conteúdo do card número 6." },
-                    { titulo: "Card 7", texto: "Conteúdo do card número 7." },
-                    { titulo: "Card 8", texto: "Conteúdo do card número 8." }
-                    ];
+            <script>
+                //Banco de dados
+                const bancoDeDadosCards = [
+                { titulo: "Card Alpha", classe: "classe-1", texto: "Resumo do Card Alpha.", detalhes: "Detalhes profundos do Card Alpha da Classe 1." },
+                { titulo: "Card Beta", classe: "classe-2", texto: "Resumo do Card Beta.", detalhes: "Detalhes profundos do Card Beta da Classe 2." },
+                { titulo: "Card Gamma", classe: "classe-3", texto: "Resumo do Card Gamma.", detalhes: "Detalhes profundos do Card Gamma da Classe 3." },
+                { titulo: "Card Delta", classe: "classe-4", texto: "Resumo do Card Delta.", detalhes: "Detalhes profundos do Card Delta da Classe 4." },
+                { titulo: "Card Epsilon", classe: "classe-5", texto: "Resumo do Card Epsilon.", detalhes: "Detalhes profundos do Card Epsilon da Classe 5." },
+                { titulo: "Card Zeta", classe: "classe-1", texto: "Resumo do Card Zeta.", detalhes: "Detalhes profundos do Card Zeta da Classe 1." },
+                { titulo: "Card Eta", classe: "classe-2", texto: "Resumo do Card Eta.", detalhes: "Detalhes profundos do Card Eta da Classe 2." },
+                { titulo: "Card Theta", classe: "classe-3", texto: "Resumo do Card Theta.", detalhes: "Detalhes profundos do Card Theta da Classe 3." },
+                { titulo: "Card Iota", classe: "classe-4", texto: "Resumo do Card Iota.", detalhes: "Detalhes profundos do Card Iota da Classe 4." },
+                { titulo: "Card Kappa", classe: "classe-5", texto: "Resumo do Card Kappa.", detalhes: "Detalhes profundos do Card Kappa da Classe 5." }
+                ];
 
-                    // Função para sortear 
-                    function sortearItens(listaOriginal, quantidade) {
-                    const copiaLista = [...listaOriginal];
-                    const itensSorteados = [];
+                //número d cards exibidos
+                const totalParaExibir = 4;
 
-                    for (let i = 0; i < quantidade; i++) {
-                        if (copiaLista.length === 0) break;
-                        
-                        const indiceAleatorio = Math.floor(Math.random() * copiaLista.length);
-                        const [itemRemovido] = copiaLista.splice(indiceAleatorio, 1);
-                        itensSorteados.push(itemRemovido);
-                    }
+                //embaralhar o array completo
+                function embaralhar(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+                }
 
-                    return itensSorteados;
-                    }
-
-                    // Função para renderizar os cards sorteados no HTML
-                    function renderizarCards() {
-                    const container = document.getElementById("container-cards");
-                    container.innerHTML = ""; 
-
-                    // 3 = número de cards sorteados, aumentar mais tarde
-                    const meusCardsSorteados = sortearItens(bancoDeCards, 3);
-
-                    meusCardsSorteados.forEach(item => {
-                        const cardDiv = document.createElement("div");
-                        div.className = "card-item";
-                        div.setAttribute("data-classe", card.classe);
-                        cardDiv.className = "card";
-                        cardDiv.innerHTML = `
-                        <h3>${item.titulo}</h3>
-                        <span class="tag ${card.classe}">${card.classe}</span>
-                        <p>${item.texto}</p>
-                        `;
-                        container.appendChild(cardDiv);
-                    });
-                    }
-
-                    function configurarFiltros() {
-                        const botoes = document.querySelectorAll(".btn-filtro");
-                        
-                        botoes.forEach(botao => {
-                            botao.addEventListener("click", () => {
-                            const classeAlvo = botao.getAttribute("data-classe");
-                            const cards = document.querySelectorAll(".card-item");
-                            
-                            cards.forEach(card => {
-                                const classeCard = card.getAttribute("data-classe");
-                                
-                                if (classeAlvo === "todos" || classeCard === classeAlvo) {
-                                card.style.display = "block"; 
-                                } else {
-                                card.style.display = "none";
-                                }
-                            });
-                            });
-                        });
-                    }
-
+                function renderizarCardsSorteados() {
+                const container = document.getElementById("cards-container");
+                container.innerHTML = "";
+                
+                // Embaralha a lista completa
+                const listaSorteada = embaralhar([...bancoDeDadosCards]).slice(0, totalParaExibir);
+                
+                listaSorteada.forEach(card => {
+                    const div = document.createElement("div");
+                    div.className = "card-item";
+                    div.setAttribute("data-classe", card.classe); 
                     
-                    window.onload = () => {
-                        renderizarCards();
-                        configurarFiltros();
-                    };
-                </script>
-            </div>
+                    div.innerHTML = `
+                    <span class="tag ${card.classe}">${card.classe.replace("-", " ")}</span>
+                    <h3>${card.titulo}</h3>
+                    <p class="resumo">${card.texto}</p>
+                    <div class="mais-info">${card.detalhes}</div>
+                    `;
+                    
+                    div.addEventListener("click", () => {
+                    document.querySelectorAll(".card-item.expandido").forEach(aberto => {
+                        if (aberto !== div) aberto.classList.remove("expandido");
+                    });
+                    div.classList.toggle("expandido");
+                    });
+
+                    container.appendChild(div);
+                });
+                }
+
+                function configurarFiltros() {
+                const botoes = document.querySelectorAll(".btn-filtro");
+                
+                botoes.forEach(botao => {
+                    botao.addEventListener("click", () => {
+                    document.querySelector(".btn-filtro.ativo").classList.remove("ativo");
+                    botao.classList.add("ativo");
+
+                    const classeAlvo = botao.getAttribute("data-classe");
+                    const cards = document.querySelectorAll(".card-item");
+                    
+                    cards.forEach(card => {
+                        const classeCard = card.getAttribute("data-classe");
+                        
+                        if (classeAlvo === "todos" || classeCard === classeAlvo) {
+                        card.style.display = "block"; 
+                        } else {
+                        card.style.display = "none";
+                        card.classList.remove("expandido");
+                        }
+                    });
+                    });
+                });
+                }
+
+
+                window.onload = () => {
+                renderizarCardsSorteados();
+                configurarFiltros();
+                };
+            </script>
         </main>
         <footer>
-            2026, Girionário. Todos os direitos reservados.
+            &copy; 2026 Girionário
         </footer>
     </body>
 </html>
