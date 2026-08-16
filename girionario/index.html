@@ -1,7 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Girionario - Página inicial</title>
+
+        <style>
+            .cards-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .card {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.2s;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card h3 {
+                margin-top: 0;
+                color: #333;
+            }
+
+            .card p {
+                color: #666;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -23,14 +56,98 @@
        <aside id="menu-por-regiao">
             <h3>Pesquise por região</h3>
             <ol>
-                <li>Norte</li>
-                <li>Nordeste</li>
-                <li>Sudeste</li>
-                <li>Centroeste</li>
-                <li>Sul</li>
+                <li><button class="btn-filtro" data-classe="todos">Todos</button></li>
+                <li><button class="btn-filtro" data-classe="norte">Norte</button></li>
+                <li><button class="btn-filtro" data-classe="nordeste">Nordeste</button></li>
+                <li><button class="btn-filtro" data-classe="centro-oeste">Centro-Oeste</button></li>
+                <li><button class="btn-filtro" data-classe="sudeste">Sudeste</button></li>
+                <li><button class="btn-filtro" data-classe="sul">Sul</button></li>
             </ol>
+
        </aside>
-       
+        <main>
+            <div id="container-cards" class="cards-grid">
+
+                <script>
+                    // Lista de gírias
+                    const bancoDeCards = [
+                    { titulo: "De Bubuia", classe: "norte", texto: "Ficar sem fazer nada." },
+                    { titulo: "Card 2", texto: "Conteúdo do card número 2." },
+                    { titulo: "Card 3", texto: "Conteúdo do card número 3." },
+                    { titulo: "Card 4", texto: "Conteúdo do card número 4." },
+                    { titulo: "Card 5", texto: "Conteúdo do card número 5." },
+                    { titulo: "Card 6", texto: "Conteúdo do card número 6." },
+                    { titulo: "Card 7", texto: "Conteúdo do card número 7." },
+                    { titulo: "Card 8", texto: "Conteúdo do card número 8." }
+                    ];
+
+                    // Função para sortear 
+                    function sortearItens(listaOriginal, quantidade) {
+                    const copiaLista = [...listaOriginal];
+                    const itensSorteados = [];
+
+                    for (let i = 0; i < quantidade; i++) {
+                        if (copiaLista.length === 0) break;
+                        
+                        const indiceAleatorio = Math.floor(Math.random() * copiaLista.length);
+                        const [itemRemovido] = copiaLista.splice(indiceAleatorio, 1);
+                        itensSorteados.push(itemRemovido);
+                    }
+
+                    return itensSorteados;
+                    }
+
+                    // Função para renderizar os cards sorteados no HTML
+                    function renderizarCards() {
+                    const container = document.getElementById("container-cards");
+                    container.innerHTML = ""; 
+
+                    // 3 = número de cards sorteados, aumentar mais tarde
+                    const meusCardsSorteados = sortearItens(bancoDeCards, 3);
+
+                    meusCardsSorteados.forEach(item => {
+                        const cardDiv = document.createElement("div");
+                        div.className = "card-item";
+                        div.setAttribute("data-classe", card.classe);
+                        cardDiv.className = "card";
+                        cardDiv.innerHTML = `
+                        <h3>${item.titulo}</h3>
+                        <span class="tag ${card.classe}">${card.classe}</span>
+                        <p>${item.texto}</p>
+                        `;
+                        container.appendChild(cardDiv);
+                    });
+                    }
+
+                    function configurarFiltros() {
+                        const botoes = document.querySelectorAll(".btn-filtro");
+                        
+                        botoes.forEach(botao => {
+                            botao.addEventListener("click", () => {
+                            const classeAlvo = botao.getAttribute("data-classe");
+                            const cards = document.querySelectorAll(".card-item");
+                            
+                            cards.forEach(card => {
+                                const classeCard = card.getAttribute("data-classe");
+                                
+                                if (classeAlvo === "todos" || classeCard === classeAlvo) {
+                                card.style.display = "block"; 
+                                } else {
+                                card.style.display = "none";
+                                }
+                            });
+                            });
+                        });
+                    }
+
+                    
+                    window.onload = () => {
+                        renderizarCards();
+                        configurarFiltros();
+                    };
+                </script>
+            </div>
+        </main>
         <footer>
             2026, Girionário. Todos os direitos reservados.
         </footer>
