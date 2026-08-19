@@ -1,73 +1,51 @@
+/* Cabeçalho: alinha logo e título lado a lado e proporcionalmente */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+}
+
+header img {
+  height: 60px; /* Ajuste a altura proporcional conforme necessário */
+  width: auto;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Formulário: centralizado na página */
 form {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  max-width: 500px; /* Define um limite de largura para a caixa */
+  margin: 40px auto; /* Centraliza horizontalmente */
+  padding: 20px;
 }
 
-form label {
-    font-weight: bold;
-    color: #2b5e28;
-    font-size: 0.95rem;
-}
-
-form input[type="text"],
-form textarea,
-form select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    outline: none;
-    background-color: #fafafa;
-}
-
-form input[type="text"]:focus,
-form textarea:focus,
-form select:focus {
-    border-color: #2b5e28;
-    background-color: #ffffff;
-}
-
-form textarea {
-    height: 90px;
-    resize: vertical;
-}
-
-form button[type="submit"] {
-    background-color: #2b5e28;
-    color: #ffffff;
-    border: none;
-    padding: 12px;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s;
-}
-
-form button[type="submit"]:hover {
-    background-color: #1e441c;
-}
-
+/* Rodapé: layout estruturado para o mapa e a logo do IFC */
 footer {
-    grid-column: 1 / -1;
-    background-color: #e6e2da;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: #666666;
-    border-top: 1px solid #d3cece;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 30px 20px;
 }
 
-footer img {
-    max-height: 35px;
+/* Formatação do Mapa */
+footer iframe {
+  max-width: 100%;
+  width: 350px;
+  height: 200px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste proporcional da Logo do IFC */
+footer img.logo-ifc {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
 }
