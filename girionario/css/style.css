@@ -200,7 +200,7 @@ header img {
     margin: 0 5px 12px;
 }
 
-#menu-por-regiao ol {
+#menu-por-regiao ul {
     list-style: none;
 }
 
@@ -223,7 +223,99 @@ header img {
 }
 
 #menu-por-regiao li:hover {
-    background-color: #327f2e;
+    background-color: #439b3d;
+}
+
+.btn-filtro {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: #439b3d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-filtro:hover {
+    background-color: #439b3d;
+}
+
+.btn-filtro.ativo {
+    background-color: #439b3d;
+    color: white;
+}
+
+main {
+    min-height: 400px;
+}
+
+.grid-cards {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* Cards */
+
+.card-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #439b3d;
+    box-shadow: 2px 2px 7px #ccc;
+    cursor: pointer;
+}
+
+.card-item:hover {
+    box-shadow: 4px 4px 10px #aaa;
+}
+
+
+/* Título da gíria */
+
+.card-item h3 {
+    color: #439b3d;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+/* Texto */
+
+.resumo {
+    font-size: 16px;
+}
+
+
+/* Tag da região */
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: #5f8f5ab6;
+    color: white;
+}
+
+
+/* Informações escondidas */
+
+.mais-info {
+    display: none;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+
+/* Quando o card estiver aberto */
+
+.card-item.expandido .mais-info {
+    display: block;
 }
 
 
