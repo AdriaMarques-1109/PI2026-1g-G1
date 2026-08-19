@@ -91,7 +91,7 @@ header::after {
 ========================= */
 
 #titulo {
-    position: absolute;
+    position: relative;
     color: white;
     z-index: 5;
 }
@@ -136,7 +136,7 @@ header::after {
 ========================= */
 
 .busca-container {
-    position: absolute;
+    position: relative;
     z-index: 5;
     width: 100%;
     max-width: 480px;
@@ -166,7 +166,7 @@ header::after {
 ========================= */
 
 #menu-de-navegacao {
-    position: absolute;
+    position: relative;
     z-index: 10;
 }
 
