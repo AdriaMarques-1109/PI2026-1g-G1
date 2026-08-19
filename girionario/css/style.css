@@ -13,6 +13,7 @@ body {
     background-color: #f7e5c8;
     font-family: Arial, Helvetica, sans-serif;
     color: #555;
+    padding-bottom: 50px;
 }
 
 
@@ -21,54 +22,66 @@ body {
 ========================= */
 
 header {
-    height: 175px;
+    width: 100%;
+    min-height: 320px;
     background-color: #087000;
     border-bottom: 4px solid #f0a52b;
-
     position: relative;
     overflow: hidden;
+    padding: 25px 7%;
+}
 
-    padding: 30px 7%;
+/* Container interno para organizar os elementos com segurança dentro do fundo verde */
+.header-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 /* Círculo decorativo do meio */
 header::before {
     content: "";
     position: absolute;
-
     width: 125px;
     height: 125px;
-
     background-color: #087d20;
     border-radius: 50%;
-
     top: -55px;
     left: 47%;
+    z-index: 1;
 }
 
 /* Círculo decorativo da direita */
 header::after {
     content: "";
     position: absolute;
-
     width: 150px;
     height: 150px;
-
     background-color: #087d20;
     border-radius: 50%;
-
     right: -35px;
     top: -15px;
+    z-index: 1;
 }
 
+/* Topo do cabeçalho (Logo IFC e Menu de Navegação) */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
 /* Logo do IFC */
-
-header img {
+.header-top img {
     position: relative;
     z-index: 2;
-
-    width: 45px;
+    width: 55px;
     height: auto;
 }
 
@@ -79,56 +92,72 @@ header img {
 
 #titulo {
     position: relative;
-
-    margin-top: -125px;
-    margin-left: 7%;
-
     color: white;
-
     z-index: 5;
 }
 
 #titulo h3 {
     color: #b5cda4;
-
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
-
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 #titulo h1 {
-    display: inline-block;
-
-    font-size: 38px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 42px;
     font-weight: normal;
     letter-spacing: -1px;
-
     color: white;
-
     margin: 0;
 }
 
+/* Logo do Girionário (Aumentada Proporcionalmente) */
 #titulo img {
-    width: 38px;
-    height: 38px;
-
+    width: 58px;
+    height: 58px;
     object-fit: contain;
-
     vertical-align: middle;
-
-    margin-right: 8px;
+    margin-right: 12px;
 }
 
 #titulo p {
-    width: 650px;
-
-    margin-top: 4px;
-
+    max-width: 600px;
+    margin-top: 6px;
     color: #b7cfa8;
+    font-size: 12px;
+    line-height: 1.4;
+}
 
-    font-size: 11px;
-    line-height: 1.5;
+
+/* =========================
+   BARRA DE BUSCA (NO HEADER)
+========================= */
+
+.busca-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 480px;
+}
+
+#campo-busca {
+    width: 100%;
+    padding: 11px 20px;
+    font-size: 0.95rem;
+    border: 2px solid #b7cfa8;
+    border-radius: 50px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+#campo-busca:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background-color: #ffffff;
 }
 
 
@@ -137,30 +166,24 @@ header img {
 ========================= */
 
 #menu-de-navegacao {
-    position: absolute;
-
-    top: 195px;
-    right: 30px;
-
+    position: relative;
     z-index: 10;
 }
 
 #menu-de-navegacao ol {
     display: flex;
-
     list-style: none;
-
-    gap: 8px;
+    gap: 10px;
 }
 
 #menu-de-navegacao li {
     background-color: #438f3a;
-
-    padding: 7px 14px;
-
+    padding: 8px 16px;
     border-radius: 20px;
-
-    font-size: 11px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #menu-de-navegacao a {
@@ -169,56 +192,31 @@ header img {
 }
 
 #menu-de-navegacao li:hover {
-    background-color: #347e2f;
+    background-color: #387c30;
+    transform: translateY(-2px);
 }
 
-.busca-container {
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto;
-}
-
-#campo-busca {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 50px;
-  outline: none;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#campo-busca:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
-}
 
 /* =========================
    MENU LATERAL
 ========================= */
 
 #menu-por-regiao {
-    width: 150px;
-
+    width: 180px;
     margin: 25px 0 0 25px;
-
-    padding: 15px 10px;
-
+    padding: 15px 12px;
     background-color: white;
-
-    border-radius: 20px;
-
+    border-radius: 16px;
     float: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 #menu-por-regiao h3 {
     font-size: 16px;
-    font-weight: normal;
-
-    color: #555;
-
+    font-weight: bold;
+    color: #087000;
     margin: 0 5px 12px;
+    text-align: center;
 }
 
 #menu-por-regiao ul {
@@ -227,24 +225,18 @@ header img {
 
 #menu-por-regiao li {
     background-color: #439b3d;
-
     color: white;
-
     text-align: center;
-
-    font-size: 11px;
-
-    padding: 5px 8px;
-
+    font-size: 12px;
+    padding: 8px 10px;
     margin: 8px 0;
-
     border-radius: 20px;
-
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #menu-por-regiao li:hover {
-    background-color: #439b3d;
+    background-color: #347e2f;
 }
 
 .btn-filtro {
@@ -255,88 +247,136 @@ header img {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-filtro:hover {
-    background-color: #439b3d;
+    background-color: #347e2f;
 }
 
 .btn-filtro.ativo {
-    background-color: #439b3d;
+    background-color: #347e2f;
     color: white;
 }
 
+
+/* =========================
+   CONTEÚDO PRINCIPAL E CARDS
+========================= */
+
 main {
-    min-height: 400px;
+    min-height: 800px;
 }
 
 .grid-cards {
-    width: 80%;
-    margin: 20px auto;
+    width: 75%;
+    margin: 30px auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
 }
 
-
-/* Cards */
-
+/* Cards Menores e Proporcionais */
 .card-item {
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #439b3d;
-    box-shadow: 2px 2px 7px #ccc;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.06);
     cursor: pointer;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeInCard 0.5s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card-item:hover {
-    box-shadow: 4px 4px 10px #aaa;
+    box-shadow: 0 8px 20px rgba(8, 112, 0, 0.15);
+    transform: translateY(-5px) scale(1.02);
+    border-color: #087000;
 }
-
-
-/* Título da gíria */
 
 .card-item h3 {
     color: #439b3d;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
 }
 
-
-/* Texto */
+.card-item:hover h3 {
+    color: #087000;
+}
 
 .resumo {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.3;
 }
-
-
-/* Tag da região */
 
 .tag {
     display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
     background-color: #5f8f5ab6;
     color: white;
+    align-self: flex-start;
 }
 
-
-/* Informações escondidas */
-
+/* Animações e Expansão */
 .mais-info {
     display: none;
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
 }
 
-
-/* Quando o card estiver aberto */
+.card-item.expandido {
+    aspect-ratio: auto;
+    animation: expandirCard 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
 
 .card-item.expandido .mais-info {
     display: block;
+    animation: surgirTexto 0.3s ease-in-out forwards;
+}
+
+/* Keyframes de Animação */
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandirCard {
+    0% {
+        transform: scale(0.98);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes surgirTexto {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -346,24 +386,15 @@ main {
 
 footer {
     clear: both;
-
-    margin-top: 80px;
-
+    margin-top: 100px;
     min-height: 100px;
-
     border-top: 2px solid #e4d3b7;
-
     background-color: #f7e5c8;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: #555;
-
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
@@ -374,29 +405,31 @@ footer {
 @media (max-width: 700px) {
 
     header {
-        height: 175px;
-        padding-left: 25px;
+        min-height: auto;
+        padding-bottom: 25px;
     }
 
-    #titulo {
-        margin-left: 25px;
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 
     #titulo h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
-    #titulo p {
-        width: 90%;
+    #titulo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .busca-container {
+        max-width: 100%;
     }
 
     #menu-de-navegacao {
-        position: relative;
-
-        top: auto;
-        right: auto;
-
-        margin: 15px 20px;
+        width: 100%;
     }
 
     #menu-de-navegacao ol {
@@ -405,25 +438,17 @@ footer {
 
     #menu-por-regiao {
         float: none;
-
         width: calc(100% - 40px);
-
-        margin: 20px;
+        margin: 20px auto;
     }
 
-    #menu-por-regiao ol {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-
-    #menu-por-regiao li {
-        flex: 1;
-        min-width: 80px;
+    .grid-cards {
+        width: 90%;
+        grid-template-columns: 1fr;
     }
 
     footer {
-        margin-top: 40px;
+        margin-top: 50px;
         padding: 20px;
         text-align: center;
     }
