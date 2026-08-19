@@ -1,100 +1,107 @@
-//Banco de dados
-                const bancoDeDadosCards = [
-                    { titulo: "De bubuia", classe: "norte", texto: "Ficar sem fazer nada, descansando.", detalhes: "Vem do verbo bubuiar, de origem tupi, que significa 'boiar' ou 'flutuar'." },
-                    { titulo: "Borogodó", classe: "norte", texto: "Charme, encanto especial.", detalhes: "Palavra de origem popular, difundida principalmente na Amazônia e em outras regiões do Norte para descrever alguém muito atraente." },
-                    { titulo: "Caparanã", classe: "norte", texto: "Mosquito.", detalhes: "Expressão regional bastante usada em estados amazônicos devido à grande presença desses insetos." },
-                    { titulo: "Jerimum", classe: "norte", texto: "Abóbora", detalhes: "Herdada da influência das línguas indígenas, especialmente do tupi." },
-                    { titulo: "Assunta bem", classe: "norte", texto: "Preste atençãp.", detalhes: "Expressão popular criada a partir do verbo 'assuntar', muito comum no Norte." },
-                    { titulo: "Oxente", classe: "nordeste", texto: "Expressão de surpresa ou espanto.", detalhes: "DSurgiu da fala popular nordestina e tornou-se um dos maiores símbolos da região." },
-                    { titulo: "Aperreado", classe: "nordeste", texto: "Muito bom, excelente ou bravo, dependendo do contexto.", detalhes: "Palavra tradicional do sertão nordestino, ligada ao modo de falar regional." },
-                    { titulo: "Cabra da Peste", classe: "nordeste", texto: "Pessoa corajosa ou muito resistente.", detalhes: "Originou-se no sertão, valorizando a força dos sertanejos diante das dificuldades." },
-                    { titulo: "Mangar", classe: "nordeste", texto: "Zombar, tirar sarro.", detalhes: "Verbo popular presente em diversos estados nordestinos há muitas gerações." },
-                    { titulo: "Camelo", classe: "centro-oeste", texto: "Bicicleta", detalhes: "Tornou-se popular no Centro-Oeste e foi difundida nacionalmente por músicas e pela cultura local." },
-                    { titulo: "Piseiro", classe: "centro-oeste", texto: "Festa animada ou confusão.", detalhes: "Associada às festas populares e ao modo descontraído de falar da região."},
-                    { titulo: "Bagual", classe: "sul", texto: "Uma pessoa muito forte ou valente", detalhes: "nfluência da cultura pecuária presente também em áreas do Centro-Oeste."},
-                    { titulo: "Trem", classe: "centro-oeste", texto: "Qualquer objeto ou situação.", detalhes: "Embora seja muito associado a Minas Gerais, também é bastante usado em Goiás e no Distrito Federal."},
-                    { titulo: "Mói de gente", classe: "centro-oeste", texto: "Muitas pessoas.", detalhes: "Expressão popular usada para indicar grande quantidade de pessoas."},
-                    { titulo: "Mano", classe: "sudeste", texto: "Amigo, colega.", detalhes: "Popularizada em São Paulo entre jovens e difundida para todo o país."},
-                    { titulo: "Mó", classe: "sudeste", texto: "Muito.", detalhes: "Muito utilizada em São Paulo e no Rio de Janeiro em expressões como 'mó legal'."},
-                    { titulo: "Sussa", classe: "sudeste", texto: "Tranquilo, sossegado.", detalhes: "Abreviação de 'sossegado', bastante comum na fala paulista."},
-                    { titulo: "Bolado", classe: "sudeste", texto: "Chateado ou irritado.", detalhes: "Ganhou força principalmente no Rio de Janeiro entre os jovens."},
-                    { titulo: "Rolê", classe: "sudeste", texto: "Passeio, saída.", detalhes: "Surgiu em São Paulo e tornou-se uma das gírias mais populares do Brasil."},
-                    { titulo: "Bah", classe: "sul", texto: "Expressão de surpresa ou admiração.", detalhes: "Marca registrada da fala gaúcha, com influência das imigrações do Sul."},
-                    { titulo: "Guri/Guria", classe: "sul", texto: "Menino/Menina.", detalhes: "Palavra de origem indígena (quéchua), muito difundida na região Sul."},
-                    { titulo: "Piá", classe: "sul", texto: "Menino", detalhes: "Termo tradicional do Paraná e de Santa Catarina, também de origem indígena."},
-                    { titulo: "Capaz", classe: "sul", texto: "Expressão de surpresa, negação ou espanto.", detalhes: "Muito usada no Rio Grande do Sul como marca do dialeto regional."},
-                    { titulo: "Tri", classe: "sul", texto: "Muito; extremamente.", detalhes: "Usada para intensificar características, como em 'tri legal'. Tornou-se uma das gírias mais conhecidas do Sul."},
-                ];
+// Banco de dados de gírias regionais
+const bancoDeDadosCards = [
+  { titulo: "De bubuia", classe: "norte", texto: "Ficar sem fazer nada, descansando.", detalhes: "Vem do verbo bubuiar, de origem tupi, que significa 'boiar' ou 'flutuar'." },
+  { titulo: "Borogodó", classe: "norte", texto: "Charme, encanto especial.", detalhes: "Palavra de origem popular, difundida principalmente na Amazônia e em outras regiões do Norte para descrever alguém muito atraente." },
+  { titulo: "Caparanã", classe: "norte", texto: "Mosquito.", detalhes: "Expressão regional bastante usada em estados amazônicos devido à grande presença desses insetos." },
+  { titulo: "Jerimum", classe: "norte", texto: "Abóbora.", detalhes: "Herdada da influência das línguas indígenas, especialmente do tupi." },
+  { titulo: "Assunta bem", classe: "norte", texto: "Preste atenção.", detalhes: "Expressão popular criada a partir do verbo 'assuntar', muito comum no Norte." },
+  { titulo: "Oxente", classe: "nordeste", texto: "Expressão de surpresa ou espanto.", detalhes: "Surgiu da fala popular nordestina e tornou-se um dos maiores símbolos da região." },
+  { titulo: "Aperreado", classe: "nordeste", texto: "Muito bom, excelente ou bravo, dependendo do contexto.", detalhes: "Palavra tradicional do sertão nordestino, ligada ao modo de falar regional." },
+  { titulo: "Cabra da Peste", classe: "nordeste", texto: "Pessoa corajosa ou muito resistente.", detalhes: "Originou-se no sertão, valorizando a força dos sertanejos diante das dificuldades." },
+  { titulo: "Mangar", classe: "nordeste", texto: "Zombar, tirar sarro.", detalhes: "Verbo popular presente em diversos estados nordestinos há muitas gerações." },
+  { titulo: "Camelo", classe: "centro-oeste", texto: "Bicicleta.", detalhes: "Tornou-se popular no Centro-Oeste e foi difundida nacionalmente por músicas e pela cultura local." },
+  { titulo: "Piseiro", classe: "centro-oeste", texto: "Festa animada ou confusão.", detalhes: "Associada às festas populares e ao modo descontraído de falar da região." },
+  { titulo: "Bagual", classe: "sul", texto: "Uma pessoa muito forte ou valente.", detalhes: "Influência da cultura pecuária presente também em áreas do Centro-Oeste." },
+  { titulo: "Trem", classe: "centro-oeste", texto: "Qualquer objeto ou situação.", detalhes: "Embora seja muito associado a Minas Gerais, também é bastante usado em Goiás e no Distrito Federal." },
+  { titulo: "Mói de gente", classe: "centro-oeste", texto: "Muitas pessoas.", detalhes: "Expressão popular usada para indicar grande quantidade de pessoas." },
+  { titulo: "Mano", classe: "sudeste", texto: "Amigo, colega.", detalhes: "Popularizada em São Paulo entre jovens e difundida para todo o país." },
+  { titulo: "Mó", classe: "sudeste", texto: "Muito.", detalhes: "Muito utilizada em São Paulo e no Rio de Janeiro em expressões como 'mó legal'." },
+  { titulo: "Sussa", classe: "sudeste", texto: "Tranquilo, sossegado.", detalhes: "Abreviação de 'sossegado', bastante comum na fala paulista." },
+  { titulo: "Bolado", classe: "sudeste", texto: "Chateado ou irritado.", detalhes: "Ganhou força principalmente no Rio de Janeiro entre os jovens." },
+  { titulo: "Rolê", classe: "sudeste", texto: "Passeio, saída.", detalhes: "Surgiu em São Paulo e tornou-se uma das gírias mais populares do Brasil." },
+  { titulo: "Bah", classe: "sul", texto: "Expressão de surpresa ou admiração.", detalhes: "Marca registrada da fala gaúcha, com influência das imigrações do Sul." },
+  { titulo: "Guri/Guria", classe: "sul", texto: "Menino/Menina.", detalhes: "Palavra de origem indígena (quéchua), muito difundida na região Sul." },
+  { titulo: "Piá", classe: "sul", texto: "Menino.", detalhes: "Termo tradicional do Paraná e de Santa Catarina, também de origem indígena." },
+  { titulo: "Capaz", classe: "sul", texto: "Expressão de surpresa, negação ou espanto.", detalhes: "Muito usada no Rio Grande do Sul como marca do dialeto regional." },
+  { titulo: "Tri", classe: "sul", texto: "Muito; extremamente.", detalhes: "Usada para intensificar características, como em 'tri legal'. Tornou-se uma das gírias mais conhecidas do Sul." }
+];
 
-                //número d cards exibidos
-                const totalParaExibir = 6;
+// Número de cards exibidos
+const totalParaExibir = 6;
 
-                //embaralhar o array completo
-                function embaralhar(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-                return array;
-                }
+// Algoritmo para embaralhar o array
+function embaralhar(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-                function renderizarCardsSorteados() {
-                const container = document.getElementById("cards-container");
-                container.innerHTML = "";
-                
-                // Embaralha a lista completa
-                const listaSorteada = embaralhar([...bancoDeDadosCards]).slice(0, totalParaExibir);
-                
-                listaSorteada.forEach(card => {
-                    const div = document.createElement("div");
-                    div.className = "card-item";
-                    div.setAttribute("data-classe", card.classe); 
-                    
-                    div.innerHTML = `
-                    <span class="tag ${card.classe}">${card.classe.replace("-", " ")}</span>
-                    <h3>${card.titulo}</h3>
-                    <p class="resumo">${card.texto}</p>
-                    <div class="mais-info">${card.detalhes}</div>
-                    `;
-                    
-                    div.addEventListener("click", () => {
-                    document.querySelectorAll(".card-item.expandido").forEach(aberto => {
-                        if (aberto !== div) aberto.classList.remove("expandido");
-                    });
-                    div.classList.toggle("expandido");
-                    });
+function renderizarCardsSorteados() {
+  const container = document.getElementById("cards-container");
+  if (!container) return;
+  
+  container.innerHTML = "";
 
-                    container.appendChild(div);
-                });
-                }
+  // Embaralha a lista e seleciona os primeiros X elementos
+  const listaSorteada = embaralhar([...bancoDeDadosCards]).slice(0, totalParaExibir);
 
-                function configurarFiltros() {
-                const botoes = document.querySelectorAll(".btn-filtro");
-                
-                botoes.forEach(botao => {
-                    botao.addEventListener("click", () => {
-                    document.querySelector(".btn-filtro.ativo").classList.remove("ativo");
-                    botao.classList.add("ativo");
+  listaSorteada.forEach(card => {
+    const div = document.createElement("div");
+    div.className = "card-item";
+    div.setAttribute("data-classe", card.classe);
 
-                    const classeAlvo = botao.getAttribute("data-classe");
-                    const cards = document.querySelectorAll(".card-item");
-                    
-                    cards.forEach(card => {
-                        const classeCard = card.getAttribute("data-classe");
-                        
-                        if (classeAlvo === "todos" || classeCard === classeAlvo) {
-                        card.style.display = "block"; 
-                        } else {
-                        card.style.display = "none";
-                        card.classList.remove("expandido");
-                        }
-                    });
-                    });
-                });
-                }
+    div.innerHTML = `
+      <span class="tag ${card.classe}">${card.classe.replace("-", " ")}</span>
+      <h3>${card.titulo}</h3>
+      <p class="resumo">${card.texto}</p>
+      <div class="mais-info">${card.detalhes}</div>
+    `;
 
-           
-                window.onload = () => {
-                renderizarCardsSorteados();
-                configurarFiltros();
-                };
+    // Clique para expandir
+    div.addEventListener("click", () => {
+      document.querySelectorAll(".card-item.expandido").forEach(aberto => {
+        if (aberto !== div) aberto.classList.remove("expandido");
+      });
+      div.classList.toggle("expandido");
+    });
+
+    container.appendChild(div);
+  });
+}
+
+function configurarFiltros() {
+  const botoes = document.querySelectorAll(".btn-filtro");
+
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      const botaoAtivoAtual = document.querySelector(".btn-filtro.ativo");
+      if (botaoAtivoAtual) {
+        botaoAtivoAtual.classList.remove("ativo");
+      }
+      
+      botao.classList.add("ativo");
+
+      const classeAlvo = botao.getAttribute("data-classe");
+      const cards = document.querySelectorAll(".card-item");
+
+      cards.forEach(card => {
+        const classeCard = card.getAttribute("data-classe");
+
+        if (classeAlvo === "todos" || classeCard === classeAlvo) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+          card.classList.remove("expandido");
+        }
+      });
+    });
+  });
+}
+
+// Inicialização segura
+document.addEventListener("DOMContentLoaded", () => {
+  renderizarCardsSorteados();
+  configurarFiltros();
+});
