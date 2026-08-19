@@ -29,6 +29,10 @@ header {
     position: relative;
     overflow: hidden;
     padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 /* Container interno para organizar os elementos com segurança dentro do fundo verde */
@@ -41,6 +45,11 @@ header {
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
+}
+
+header img {
+  height: 60px;
+  width: auto;
 }
 
 /* Círculo decorativo do meio */
@@ -440,14 +449,23 @@ footer {
 
     footer {
         margin-top: 50px;
-        padding: 20px;
         text-align: center;
         display: inline;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 30px 20px;
+}
     }
 
     #mapa {
-        color: #e4d3b7;
-        font-size: smaller;
+        width: 350px;
+        height: 200px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     #mapa a {
@@ -458,7 +476,8 @@ footer {
     #logo-ifc {
         position: relative;
         z-index: 2;
-        width: 55px;
         height: auto;
+        max-width: 50px;
+        object-fit: contain;
     }
 }
