@@ -172,6 +172,27 @@ header img {
     background-color: #347e2f;
 }
 
+.busca-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+#campo-busca {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#campo-busca:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
 
 /* =========================
    MENU LATERAL
