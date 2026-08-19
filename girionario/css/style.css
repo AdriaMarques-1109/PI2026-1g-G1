@@ -1,0 +1,150 @@
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5ebd9; /* Fundo bege da interface */
+    color: #333;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "titulo titulo"
+        "menu menu"
+        "aside main"
+        "footer footer";
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+    padding: 0 0 20px 0;
+}
+
+/* Header com Logo IFC */
+header {
+    grid-area: header;
+    background-color: #0b6121;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    max-height: 50px;
+}
+
+/* Banner de Título (Girionário) */
+#titulo {
+    grid-area: titulo;
+    background-color: #0b6121;
+    color: #ffffff;
+    padding: 20px 40px 40px 40px;
+    border-bottom: 5px solid #d97724;
+}
+
+#titulo h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #a3e2a4;
+}
+
+#titulo h1 {
+    font-size: 2.5rem;
+    margin: 5px 0 10px 0;
+    letter-spacing: 1px;
+}
+
+#titulo img {
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#titulo p {
+    font-size: 0.95rem;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+/* Menu de Navegação Superior */
+#menu-de-navegacao {
+    grid-area: menu;
+    padding: 0 40px;
+}
+
+#menu-de-navegacao ol {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+#menu-de-navegacao a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #1e7a34;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+#menu-de-navegacao a:hover {
+    background-color: #155724;
+}
+
+/* Menu Lateral por Região (Alinhado até a altura do 3º item) */
+#menu-por-regiao {
+    grid-area: aside;
+    background-color: #ffffff;
+    margin-left: 30px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    height: 250px; /* Define o término exato no final da 3ª região */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#menu-por-regiao h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+#menu-por-regiao ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+}
+
+#menu-por-regiao li {
+    background-color: #2d8a43;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#menu-por-regiao li:hover {
+    opacity: 0.9;
+}
+
+/* Rodapé */
+footer {
+    grid-area: footer;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    border-top: 1px solid #e0d5c1;
+}
