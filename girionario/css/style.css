@@ -457,4 +457,8 @@ footer {
         color: #e4d3b7;
         font-size: smaller;
     }
+
+    #logo-ifc {
+        width: 100px;
+    }
 }
