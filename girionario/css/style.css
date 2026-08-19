@@ -22,12 +22,12 @@ body {
 ========================= */
 
 header {
-    min-height: 220px;
+    min-height: 280px; /* Aumentado para garantir que tudo fique dentro do fundo verde */
     background-color: #087000;
     border-bottom: 4px solid #f0a52b;
     position: relative;
     overflow: hidden;
-    padding: 25px 7%;
+    padding: 30px 7%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,7 +61,7 @@ header::after {
 header img {
     position: relative;
     z-index: 2;
-    width: 45px;
+    width: 55px; /* Ligeiramente ampliada para acompanhar */
     height: auto;
 }
 
@@ -73,39 +73,42 @@ header img {
 #titulo {
     position: relative;
     margin-left: 7%;
+    margin-top: 10px;
     color: white;
     z-index: 5;
 }
 
 #titulo h3 {
     color: #b5cda4;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 #titulo h1 {
-    display: inline-block;
-    font-size: 36px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 42px;
     font-weight: normal;
     letter-spacing: -1px;
     color: white;
     margin: 0;
 }
 
+/* Logo do Girionário (Aumentada Proporcionalmente) */
 #titulo img {
-    width: 36px;
-    height: 36px;
+    width: 58px;  /* Aumentado de 36px para 58px */
+    height: 58px; /* Mantém a proporção quadrada da imagem */
     object-fit: contain;
     vertical-align: middle;
-    margin-right: 8px;
+    margin-right: 12px;
 }
 
 #titulo p {
     max-width: 600px;
-    margin-top: 4px;
+    margin-top: 6px;
     color: #b7cfa8;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
 }
 
@@ -118,14 +121,14 @@ header img {
     position: relative;
     z-index: 5;
     width: 100%;
-    max-width: 450px;
-    margin: 15px 0 0 7%;
+    max-width: 480px;
+    margin: 20px 0 0 7%; /* Posicionada de forma segura dentro do cabeçalho */
 }
 
 #campo-busca {
     width: 100%;
-    padding: 10px 18px;
-    font-size: 0.9rem;
+    padding: 11px 20px;
+    font-size: 0.95rem;
     border: 2px solid #b7cfa8;
     border-radius: 50px;
     outline: none;
@@ -147,7 +150,7 @@ header img {
 
 #menu-de-navegacao {
     position: absolute;
-    top: 25px;
+    top: 30px;
     right: 7%;
     z-index: 10;
 }
@@ -387,6 +390,7 @@ footer {
 @media (max-width: 700px) {
 
     header {
+        min-height: auto;
         padding-bottom: 25px;
     }
 
@@ -395,7 +399,12 @@ footer {
     }
 
     #titulo h1 {
-        font-size: 28px;
+        font-size: 32px;
+    }
+
+    #titulo img {
+        width: 45px;
+        height: 45px;
     }
 
     .busca-container {
