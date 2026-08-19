@@ -22,15 +22,25 @@ body {
 ========================= */
 
 header {
-    min-height: 280px; /* Aumentado para garantir que tudo fique dentro do fundo verde */
+    width: 100%;
+    min-height: 320px;
     background-color: #087000;
     border-bottom: 4px solid #f0a52b;
     position: relative;
     overflow: hidden;
-    padding: 30px 7%;
+    padding: 25px 7%;
+}
+
+/* Container interno para organizar os elementos com segurança dentro do fundo verde */
+.header-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 15px;
 }
 
 /* Círculo decorativo do meio */
@@ -43,6 +53,7 @@ header::before {
     border-radius: 50%;
     top: -55px;
     left: 47%;
+    z-index: 1;
 }
 
 /* Círculo decorativo da direita */
@@ -55,13 +66,22 @@ header::after {
     border-radius: 50%;
     right: -35px;
     top: -15px;
+    z-index: 1;
+}
+
+/* Topo do cabeçalho (Logo IFC e Menu de Navegação) */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 /* Logo do IFC */
-header img {
+.header-top img {
     position: relative;
     z-index: 2;
-    width: 55px; /* Ligeiramente ampliada para acompanhar */
+    width: 55px;
     height: auto;
 }
 
@@ -72,8 +92,6 @@ header img {
 
 #titulo {
     position: relative;
-    margin-left: 7%;
-    margin-top: 10px;
     color: white;
     z-index: 5;
 }
@@ -97,8 +115,8 @@ header img {
 
 /* Logo do Girionário (Aumentada Proporcionalmente) */
 #titulo img {
-    width: 58px;  /* Aumentado de 36px para 58px */
-    height: 58px; /* Mantém a proporção quadrada da imagem */
+    width: 58px;
+    height: 58px;
     object-fit: contain;
     vertical-align: middle;
     margin-right: 12px;
@@ -122,7 +140,6 @@ header img {
     z-index: 5;
     width: 100%;
     max-width: 480px;
-    margin: 20px 0 0 7%; /* Posicionada de forma segura dentro do cabeçalho */
 }
 
 #campo-busca {
@@ -149,9 +166,7 @@ header img {
 ========================= */
 
 #menu-de-navegacao {
-    position: absolute;
-    top: 30px;
-    right: 7%;
+    position: relative;
     z-index: 10;
 }
 
@@ -394,8 +409,10 @@ footer {
         padding-bottom: 25px;
     }
 
-    #titulo {
-        margin-left: 0;
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 
     #titulo h1 {
@@ -408,15 +425,11 @@ footer {
     }
 
     .busca-container {
-        margin-left: 0;
         max-width: 100%;
     }
 
     #menu-de-navegacao {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 15px 0 0 0;
+        width: 100%;
     }
 
     #menu-de-navegacao ol {
