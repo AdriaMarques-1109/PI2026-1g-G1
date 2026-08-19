@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { titulo: "Tri", classe: "sul", texto: "Muito; extremamente.", detalhes: "Usada para intensificar características, como em 'tri legal'. Tornou-se uma das gírias mais conhecidas do Sul." }
   ];
 
-  const totalParaExibir = 6;
+  const totalParaExibir = 8;
   let filtroAtual = "todos";
   let termoBusca = "";
 
