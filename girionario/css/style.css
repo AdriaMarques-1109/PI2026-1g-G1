@@ -77,15 +77,6 @@ header::after {
     width: 100%;
 }
 
-/* Logo do IFC */
-.header-top img {
-    position: relative;
-    z-index: 2;
-    width: 55px;
-    height: auto;
-}
-
-
 /* =========================
    TÍTULO / GIRIONÁRIO
 ========================= */
@@ -458,7 +449,15 @@ footer {
         font-size: smaller;
     }
 
+    #mapa a {
+        text-decoration: none;
+        color: #e4d3b7;
+    }
+
     #logo-ifc {
-        width: 100px;
+        position: relative;
+        z-index: 2;
+        width: 55px;
+        height: auto;
     }
 }
