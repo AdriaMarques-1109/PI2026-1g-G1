@@ -93,6 +93,30 @@
                 });
                 }
 
+            const input = document.getElementById('searchInput');
+            const list = document.getElementById('resultsList');
+
+            input.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                
+                // Limpa os resultados anteriores
+                list.innerHTML = '';
+
+                // Se o campo estiver vazio, interrompe a busca
+                if (query === '') return;
+
+                // Filtra o banco de dados interno
+                const filtered = bancoDeDadosCards.filter(item => 
+                item.name.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query)
+                );
+
+                filtered.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} (${item.category})`;
+                list.appendChild(li);
+                });
+            });
 
                 window.onload = () => {
                 renderizarCardsSorteados();
