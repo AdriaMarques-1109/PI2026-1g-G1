@@ -1,5 +1,11 @@
 // Banco de dados de gírias regionais
-const bancoDeDadosCards = [
+
+document.addEventListener(("DOMContentLoaded", () => {
+
+  renderizarCardsSorteados();
+  configurarFiltros();
+
+    const bancoDeDadosCards = [
   { titulo: "De bubuia", classe: "norte", texto: "Ficar sem fazer nada, descansando.", detalhes: "Vem do verbo bubuiar, de origem tupi, que significa 'boiar' ou 'flutuar'." },
   { titulo: "Borogodó", classe: "norte", texto: "Charme, encanto especial.", detalhes: "Palavra de origem popular, difundida principalmente na Amazônia e em outras regiões do Norte para descrever alguém muito atraente." },
   { titulo: "Caparanã", classe: "norte", texto: "Mosquito.", detalhes: "Expressão regional bastante usada em estados amazônicos devido à grande presença desses insetos." },
@@ -101,7 +107,7 @@ function configurarFiltros() {
 }
 
 // Inicialização segura
-document.addEventListener("DOMContentLoaded", () => {
-  renderizarCardsSorteados();
-  configurarFiltros();
-});
+//document.addEventListener("DOMContentLoaded", () => {
+//  renderizarCardsSorteados();
+//  configurarFiltros();
+}));
