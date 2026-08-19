@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Girionario - Página inicial</title>
-
-        <link rel="stylesheet" type="text/css" href="css/css-index.css">
-        <script src="js/arquivo.js" defer></script>
- 
+        <link rel="stylesheet" href="css/sstyle.css">
     </head>
     <body>
         <header>
-            <input type="text" id="searchInput" placeholder="Digite para pesquisar...">
-            <ul id="resultsList"></ul>
+            <img src="imagens/logo-ifc-vertical.png" alt="Logo do IFC">
         </header>
 
-        <div id="titulo" class="header header-container">
-            <h3 class="sub-title">Dicionário de Gírias</h3>
-            <img src="imagens/logo_girionario.png" alt="Logo do Girionário">
-            <h1 class="main-title">Girionário</h1>
-            <p class="description">Descubra as gírias, expressões e o vocabulário único de cada canto do Brasil. Do Sul ao Norte, do Nordeste ao Centro-Oeste. 🇧🇷</p>
+        <div id="titulo">
+            <h3>Dicionário de Gírias</h3>
+            <img src="imagens/logo-girionario.png" alt="Logo do Girionário">
+            <h1>Girionário</h1>
+            <p>Descubra as gírias, expressões e o vocabulário único de cada canto do Brasil. Do Sul ao Norte, do Nordeste ao Centro-Oeste. 🇧🇷</p>
         </div>
        <nav id="menu-de-navegacao">
             <ol>
                 <li><a href="index.html">Página inicial</a></li>
-                <li><a href="pagina_de_submissão.html">Submissão</a></li>
+                <li><a href="submissao.html">Submissão</a></li>
+                <li><a href="perfil.html">Perfil do usuário</a></li>
             </ol>
        </nav>
-       <aside id="menu-por-regiao" class="menu-por-regiao">
+       <aside id="menu-por-regiao">
             <h3>Pesquise por região</h3>
-            <ul>
-                <li><button class="btn-filtro ativo" data-classe="todos">Todos</button></li>
-                <li><button class="btn-filtro" data-classe="norte">Norte</button></li>
-                <li><button class="btn-filtro" data-classe="nordeste">Nordeste</button></li>
-                <li><button class="btn-filtro" data-classe="centro-oeste">Centro-Oeste</button></li>
-                <li><button class="btn-filtro" data-classe="sudeste">Sudeste</button></li>
-                <li><button class="btn-filtro" data-classe="sul">Sul</button></li>
-            </ul>
-            </aside>
-        <main>
-            <div id="cards-container" class="grid-cards"></div>
-
-            <script>
-                
-            </script>
-        </main>
+            <ol>
+                <li>Norte</li>
+                <li>Nordeste</li>
+                <li>Sudeste</li>
+                <li>Centroeste</li>
+                <li>Sul</li>
+            </ol>
+       </aside>
+       
         <footer>
-            &copy; 2026 Girionário
+            2026, Girionário. Todos os direitos reservados.
         </footer>
     </body>
 </html>
