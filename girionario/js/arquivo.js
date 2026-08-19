@@ -1,9 +1,8 @@
 // Banco de dados de gírias regionais
 
-document.addEventListener(("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  renderizarCardsSorteados();
-  configurarFiltros();
+
 
     const bancoDeDadosCards = [
   { titulo: "De bubuia", classe: "norte", texto: "Ficar sem fazer nada, descansando.", detalhes: "Vem do verbo bubuiar, de origem tupi, que significa 'boiar' ou 'flutuar'." },
@@ -106,8 +105,7 @@ function configurarFiltros() {
   });
 }
 
-// Inicialização segura
-//document.addEventListener("DOMContentLoaded", () => {
-//  renderizarCardsSorteados();
-//  configurarFiltros();
-}));
+  renderizarCardsSorteados();
+  configurarFiltros();
+
+});
