@@ -488,7 +488,7 @@ footer img.logo-ifc {
         width: 90%;
         grid-template-columns: 1fr;
     }
-
+}
     footer {
         margin-top: 50px;
         text-align: center;
@@ -499,4 +499,3 @@ footer img.logo-ifc {
         gap: 20px;
         padding: 30px 20px;
     }
-}
