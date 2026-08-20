@@ -94,6 +94,7 @@ header::after {
     position: relative;
     color: white;
     z-index: 5;
+    display: inline-block;
 }
 
 #titulo h3 {
@@ -178,7 +179,7 @@ header::after {
 
 #menu-de-navegacao li {
     background-color: #438f3a;
-    padding: 10px 20px; /* Ajustado proporcionalmente */
+    padding: 50%;
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
@@ -398,11 +399,11 @@ footer {
     padding: 30px 20px;
     color: #555;
     font-size: 12px;
+    text-align: center;
 }
 
 /* Ajustes e Formatação do Mapa e Logo do IFC */
-#mapa,
-footer iframe {
+#mapa {
     width: 350px;
     height: 200px;
     border: 0;
