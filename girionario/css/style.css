@@ -147,7 +147,7 @@ header::after {
 }
 
 #menu-de-navegacao ol {
-    display: flex;
+    display: inline-block;
     list-style: none;
     gap: 10px;
 }
