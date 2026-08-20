@@ -77,7 +77,9 @@ header::after {
     position: relative;
     color: white;
     z-index: 5;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 #titulo h3 {
@@ -89,15 +91,12 @@ header::after {
 
 #titulo h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 16px;
     font-size: 64px;
     font-weight: bold;
     letter-spacing: -1px;
     color: rgb(255, 190, 11);
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #titulo img {
@@ -105,7 +104,6 @@ header::after {
     height: 100px;
     object-fit: contain;
     flex-shrink: 0;
-    display: flex;
 }
 
 #titulo p {
