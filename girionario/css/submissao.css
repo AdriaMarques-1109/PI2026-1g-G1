@@ -1,3 +1,27 @@
+#auxilio-submissao {
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 25px;
+    color: #438f3a;
+}
+
+#auxilio-submissao h2 {
+    color: #438f3a;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+#auxilio-submissao p {
+    max-width: 600px;
+    margin-top: 6px;
+    color: #438f3a;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
 form {
     background-color: #ffffff;
     padding: 25px;
