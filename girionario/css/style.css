@@ -104,7 +104,8 @@ header::after {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    flex-shrink: 0;    
+    flex-shrink: 0;
+    display: inline-block;
 }
 
 #titulo p {
