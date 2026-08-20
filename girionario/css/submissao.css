@@ -81,19 +81,3 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #1e441c;
 }
-
-footer {
-    grid-column: 1 / -1;
-    background-color: #e6e2da;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: #666666;
-    border-top: 1px solid #d3cece;
-}
-
-footer img {
-    max-height: 35px;
-}
