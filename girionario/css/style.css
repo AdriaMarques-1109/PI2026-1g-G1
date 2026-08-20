@@ -457,7 +457,7 @@ footer {
         justify-content: space-around;
         gap: 20px;
         padding: 30px 20px;
-}
+    }
     }
 
     #mapa {
@@ -465,7 +465,7 @@ footer {
         height: 200px;
         border: 0;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px #439b3d;
     }
 
     #mapa a {
@@ -473,11 +473,27 @@ footer {
         color: #e4d3b7;
     }
 
+    #mapa ol {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+    }
+
+    #mapa li {
+        background-color: #438f3a;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
     #logo-ifc {
-        position: relative;
+        position: absolute;
+        align-items: center;
         z-index: 2;
         height: auto;
         max-width: 50px;
         object-fit: contain;
     }
-}
