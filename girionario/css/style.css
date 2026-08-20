@@ -146,6 +146,7 @@ header::after {
 #menu-de-navegacao {
     position: absolute;
     z-index: 10;
+    align-items: flex-end;
 }
 
 #menu-de-navegacao ol {
