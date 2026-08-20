@@ -13,7 +13,8 @@ body {
     background-color: #f7e5c8;
     font-family: Arial, Helvetica, sans-serif;
     color: #555;
-    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -23,7 +24,7 @@ body {
 
 header {
     width: 100%;
-    min-height: 320px;
+    min-height: 200px;
     background-color: #087000;
     border-bottom: 4px solid #f0a52b;
     position: relative;
@@ -32,27 +33,20 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
 
-/* Container interno para organizar os elementos com segurança dentro do fundo verde */
+/* Container interno para organizar os elementos */
 .header-container {
     position: relative;
     z-index: 5;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 15px;
+    gap: 20px;
 }
 
-header img {
-  height: 60px;
-  width: auto;
-}
-
-/* Círculo decorativo do meio */
+/* Círculos decorativos */
 header::before {
     content: "";
     position: absolute;
@@ -65,7 +59,6 @@ header::before {
     z-index: 1;
 }
 
-/* Círculo decorativo da direita */
 header::after {
     content: "";
     position: absolute;
@@ -78,16 +71,18 @@ header::after {
     z-index: 1;
 }
 
-/* Topo do cabeçalho (Logo IFC e Menu de Navegação) */
+/* Topo do cabeçalho */
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 20px;
 }
 
+
 /* =========================
-   TÍTULO / GIRIONÁRIO
+   TÍTULO E LOGO DO HEADER
 ========================= */
 
 #titulo {
@@ -103,36 +98,36 @@ header::after {
     margin-bottom: 4px;
 }
 
+/* Alinhamento da logo ao lado do texto */
 #titulo h1 {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    font-size: 42px;
-    font-weight: normal;
-    letter-spacing: -1px;
+    font-size: 38px;
+    font-weight: bold;
     color: white;
     margin: 0;
+    gap: 12px;
 }
 
-/* Logo do Girionário (Aumentada Proporcionalmente) */
+/* Tamanho proporcional da imagem ao lado do título */
+#titulo h1 img,
 #titulo img {
-    width: 58px;
-    height: 58px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    vertical-align: middle;
-    margin-right: 12px;
 }
 
 #titulo p {
     max-width: 600px;
     margin-top: 6px;
     color: #b7cfa8;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.4;
 }
 
 
 /* =========================
-   BARRA DE BUSCA (NO HEADER)
+   BARRA DE BUSCA
 ========================= */
 
 .busca-container {
@@ -149,7 +144,6 @@ header::after {
     border: 2px solid #b7cfa8;
     border-radius: 50px;
     outline: none;
-    box-sizing: border-box;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.95);
 }
@@ -239,33 +233,13 @@ header::after {
     background-color: #347e2f;
 }
 
-.btn-filtro {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    background-color: #439b3d;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-filtro:hover {
-    background-color: #347e2f;
-}
-
-.btn-filtro.ativo {
-    background-color: #439b3d;
-    color: white;
-}
-
 
 /* =========================
    CONTEÚDO PRINCIPAL E CARDS
 ========================= */
 
 main {
+    flex: 1;
     min-height: 500px;
 }
 
@@ -277,7 +251,6 @@ main {
     gap: 20px;
 }
 
-/* Cards Menores e Proporcionais */
 .card-item {
     background-color: white;
     padding: 20px;
@@ -304,11 +277,6 @@ main {
     color: #439b3d;
     font-size: 20px;
     margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.card-item:hover h3 {
-    color: #087000;
 }
 
 .resumo {
@@ -326,7 +294,6 @@ main {
     align-self: flex-start;
 }
 
-/* Animações e Expansão */
 .mais-info {
     display: none;
     margin-top: 12px;
@@ -344,7 +311,6 @@ main {
     animation: surgirTexto 0.3s ease-in-out forwards;
 }
 
-/* Keyframes de Animação */
 @keyframes fadeInCard {
     from {
         opacity: 0;
@@ -357,15 +323,9 @@ main {
 }
 
 @keyframes expandirCard {
-    0% {
-        transform: scale(0.98);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(0.98); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
 
 @keyframes surgirTexto {
@@ -381,20 +341,42 @@ main {
 
 
 /* =========================
-   FOOTER
+   FOOTER (RODAPÉ CORRIGIDO)
 ========================= */
 
 footer {
     clear: both;
-    margin-top: 100px;
-    min-height: 100px;
+    margin-top: 60px;
+    padding: 30px 5%;
     border-top: 2px solid #e4d3b7;
     background-color: #f7e5c8;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    gap: 30px;
     color: #555;
-    font-size: 12px;
+    font-size: 13px;
+}
+
+/* Formatação do Mapa */
+#mapa, 
+footer iframe {
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(8, 112, 0, 0.2);
+}
+
+/* Formatação da Logo do IFC */
+#logo-ifc, 
+footer img.logo-ifc {
+    position: static; /* Remove o position absolute incorreto */
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
 }
 
 
@@ -402,12 +384,7 @@ footer {
    RESPONSIVIDADE
 ========================= */
 
-@media (max-width: 700px) {
-
-    header {
-        min-height: auto;
-        padding-bottom: 25px;
-    }
+@media (max-width: 768px) {
 
     .header-top {
         flex-direction: column;
@@ -416,20 +393,17 @@ footer {
     }
 
     #titulo h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
+    #titulo h1 img,
     #titulo img {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
     .busca-container {
         max-width: 100%;
-    }
-
-    #menu-de-navegacao {
-        width: 100%;
     }
 
     #menu-de-navegacao ol {
@@ -438,7 +412,7 @@ footer {
 
     #menu-por-regiao {
         float: none;
-        width: calc(100% - 40px);
+        width: calc(100% - 50px);
         margin: 20px auto;
     }
 
@@ -448,52 +422,7 @@ footer {
     }
 
     footer {
-        margin-top: 50px;
+        flex-direction: column;
         text-align: center;
-        display: inline;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-        gap: 20px;
-        padding: 30px 20px;
     }
-    }
-
-    #mapa {
-        width: 350px;
-        height: 200px;
-        border: 0;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px #439b3d;
-    }
-
-    #mapa-a {
-        text-decoration: none;
-        color: #e4d3b7;
-    }
-
-    #mapa-ol {
-        display: flex;
-        list-style: none;
-        gap: 10px;
-    }
-
-    #mapa-li {
-        background-color: #438f3a;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    #logo-ifc {
-        position: absolute;
-        align-items: center;
-        z-index: 2;
-        height: auto;
-        max-width: 50px;
-        object-fit: contain;
-    }
+}
