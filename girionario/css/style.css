@@ -101,8 +101,8 @@ header::after {
 }
 
 #titulo img {
-    width: 100px;
-    height: 100px;
+    width: 500px;
+    height: 500px;
     object-fit: contain;
     flex-shrink: 0;
     display: inline-block;
@@ -142,12 +142,12 @@ header::after {
 }
 
 #menu-de-navegacao {
-    position: relative;
+    position: absolute;
     z-index: 10;
 }
 
 #menu-de-navegacao ol {
-    display: inline-block;
+    display: flex;
     list-style: none;
     gap: 10px;
 }
