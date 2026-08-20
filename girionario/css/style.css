@@ -388,8 +388,8 @@ footer {
     clear: both;
     margin-top: 100px;
     min-height: 100px;
-    border-top: 2px solid #e4d3b7;
-    background-color: #f7e5c8;
+    border-top: 2px solid #347e2f;
+    background-color: #439b3d;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -410,25 +410,13 @@ footer iframe {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-#mapa-a {
-    text-decoration: none;
-    color: #e4d3b7;
-}
-
-#mapa-ol {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-}
-
-#mapa-li {
-    background-color: #438f3a;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+#mapa-a,
+#mapa-a:visited,
+#mapa-a:hover,
+#mapa-a:active {
+    text-decoration: none; 
+    color: inherit;
+    cursor: default;
 }
 
 #logo-ifc,
@@ -437,6 +425,7 @@ footer img.logo-ifc {
     max-width: 140px;
     height: auto;
     object-fit: contain;
+    margin-left: auto;
 }
 
 
