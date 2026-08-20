@@ -468,18 +468,18 @@ footer {
         box-shadow: 0 4px 8px #439b3d;
     }
 
-    #mapa a {
+    #mapa-a {
         text-decoration: none;
         color: #e4d3b7;
     }
 
-    #mapa ol {
+    #mapa-ol {
         display: flex;
         list-style: none;
         gap: 10px;
     }
 
-    #mapa li {
+    #mapa-li {
         background-color: #438f3a;
         padding: 8px 16px;
         border-radius: 20px;
