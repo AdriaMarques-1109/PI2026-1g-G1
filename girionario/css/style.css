@@ -105,9 +105,10 @@ header::after {
 }
 
 #titulo h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline-flex;
     align-items: center;
-    font-size: 42px;
+    font-size: 50px;
     font-weight: normal;
     letter-spacing: -1px;
     color: rgb(255, 190, 11);
@@ -129,11 +130,6 @@ header::after {
     font-size: 12px;
     line-height: 1.4;
 }
-
-
-/* =========================
-   BARRA DE BUSCA (NO HEADER)
-========================= */
 
 .busca-container {
     position: relative;
@@ -160,11 +156,6 @@ header::after {
     background-color: #ffffff;
 }
 
-
-/* =========================
-   MENU DE NAVEGAÇÃO
-========================= */
-
 #menu-de-navegacao {
     position: relative;
     z-index: 10;
@@ -178,12 +169,13 @@ header::after {
 
 #menu-de-navegacao li {
     background-color: #438f3a;
-    padding: 20%;
+    padding: 10%;
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
 }
 
 #menu-de-navegacao a {
