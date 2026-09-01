@@ -37,10 +37,13 @@ header {
     gap: 15px;
 }
 
+#titulo img,
 .logo-livro {
-    height: 60px;
     width: auto;
-    display: inline;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    vertical-align: middle;
 }
 
 header::before {
