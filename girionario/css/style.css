@@ -37,13 +37,12 @@ header {
     gap: 15px;
 }
 
-#titulo img,
 .logo-livro {
-    width: auto;
     height: 60px;
-    object-fit: contain;
-    flex-shrink: 0;
+    width: auto;
     vertical-align: middle;
+    align-self: center;
+    object-fit: contain;
 }
 
 header::before {
@@ -105,13 +104,6 @@ header::after {
     display: flex;
     align-items: center;
     gap: 16px;
-}
-
-#titulo img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    flex-shrink: 0;
 }
 
 #titulo p {
